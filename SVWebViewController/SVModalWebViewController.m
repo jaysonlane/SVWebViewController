@@ -38,10 +38,17 @@
 - (instancetype)initWithURLRequest:(NSURLRequest *)request {
     self.webViewController = [[SVWebViewController alloc] initWithURLRequest:request];
     if (self = [super initWithRootViewController:self.webViewController]) {
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+        
+        
+        
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SVWebViewController.bundle/SVWebViewControllerClose"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStyleDone target:self.webViewController action:@selector(doneButtonTapped:)];
+        
+        doneButton.tintColor = [UIColor darkGrayColor];
+        
+     /*   UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self.webViewController
                                                                                     action:@selector(doneButtonTapped:)];
-        
+       */
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
             self.webViewController.navigationItem.leftBarButtonItem = doneButton;
         else
