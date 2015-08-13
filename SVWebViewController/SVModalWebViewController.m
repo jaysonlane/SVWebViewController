@@ -39,11 +39,8 @@
     self.webViewController = [[SVWebViewController alloc] initWithURLRequest:request];
     if (self = [super initWithRootViewController:self.webViewController]) {
         
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self.webViewController action:@selector(doneButtonTapped:)];
         
-        
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"SVWebViewController.bundle/SVWebViewControllerClose"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStyleDone target:self.webViewController action:@selector(doneButtonTapped:)];
-        
-        doneButton.tintColor = [UIColor darkGrayColor];
         
      /*   UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                     target:self.webViewController
