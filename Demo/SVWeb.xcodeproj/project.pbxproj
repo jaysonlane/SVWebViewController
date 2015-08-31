@@ -29,6 +29,10 @@
 		28C286E10D94DF7D0034E888 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* ViewController.m */; };
 		28F335F11007B36200424DE2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* ViewController.xib */; };
 		D53D8F1316A8688600711E30 /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53D8F1516A8688600711E30 /* SVWebViewController.strings */; };
+		D57492AB1B94F87B0019C141 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D57492AA1B94F87B0019C141 /* OnePasswordExtension.m */; };
+		D57492AD1B94F8A50019C141 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57492AC1B94F8A50019C141 /* WebKit.framework */; };
+		D57492AF1B94FC250019C141 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57492AE1B94FC250019C141 /* MobileCoreServices.framework */; };
+		D57492B11B94FC3F0019C141 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57492B01B94FC3F0019C141 /* 1Password.xcassets */; };
 		D5FA63C516A8707A0087531C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5FA63C416A8707A0087531C /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +78,11 @@
 		D53D8F1716A868C900711E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
 		D53D8F1816A8693200711E30 /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-ES"; path = "es-ES.lproj/SVWebViewController.strings"; sourceTree = "<group>"; };
 		D53D8F1916A8693A00711E30 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SVWebViewController.strings; sourceTree = "<group>"; };
+		D57492A91B94F87B0019C141 /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		D57492AA1B94F87B0019C141 /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
+		D57492AC1B94F8A50019C141 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D57492AE1B94FC250019C141 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D57492B01B94FC3F0019C141 /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		D5FA63C416A8707A0087531C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57492AF1B94FC250019C141 /* MobileCoreServices.framework in Frameworks */,
+				D57492AD1B94F8A50019C141 /* WebKit.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 			);
@@ -171,6 +182,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D57492B01B94FC3F0019C141 /* 1Password.xcassets */,
+				D57492A91B94F87B0019C141 /* OnePasswordExtension.h */,
+				D57492AA1B94F87B0019C141 /* OnePasswordExtension.m */,
 				22AAF0BE1831F5B300AB15C4 /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				2214586C13132D3200ED7D83 /* SVWebViewController */,
@@ -206,6 +220,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D57492AE1B94FC250019C141 /* MobileCoreServices.framework */,
+				D57492AC1B94F8A50019C141 /* WebKit.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				6DAD2E4EAB184F72ACE29999 /* libPods.a */,
@@ -296,6 +312,7 @@
 				220F0B9F138E0EF400F59FC3 /* SVWebViewController.bundle in Resources */,
 				22AAF0BD1831F52F00AB15C4 /* SVWebViewControllerActivitySafari@2x.png in Resources */,
 				22AAF0BF1831F5B300AB15C4 /* README.md in Resources */,
+				D57492B11B94FC3F0019C141 /* 1Password.xcassets in Resources */,
 				D53D8F1316A8688600711E30 /* SVWebViewController.strings in Resources */,
 				22AAF0B91831F52F00AB15C4 /* SVWebViewControllerActivityChrome@2x.png in Resources */,
 				D5FA63C516A8707A0087531C /* Default-568h@2x.png in Resources */,
@@ -312,6 +329,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				22DBB66A1831E05D0008887C /* SVWebViewControllerActivity.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				D57492AB1B94F87B0019C141 /* OnePasswordExtension.m in Sources */,
 				28C286E10D94DF7D0034E888 /* ViewController.m in Sources */,
 				221C80AF13BBDA2F005F0AB8 /* SVWebViewController.m in Sources */,
 				22F087701458794B003ECD31 /* SVModalWebViewController.m in Sources */,
@@ -351,10 +369,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SVWeb_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "SVWeb-Info.plist";
 				PRODUCT_NAME = SVWeb;
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -365,11 +382,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

@@ -9,9 +9,11 @@
 #import "SVWebViewControllerActivityChrome.h"
 #import "SVWebViewControllerActivitySafari.h"
 #import "SVWebViewController.h"
+#import "OnePasswordExtension.h"
 
 @interface SVWebViewController () <UIWebViewDelegate>
 
+@property (nonatomic, strong) UIBarButtonItem *onePasswordBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *backBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *forwardBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *refreshBarButtonItem;
@@ -143,6 +145,14 @@
     return _forwardBarButtonItem;
 }
 
+- (UIBarButtonItem *)onePasswordBarButtonItem {
+    if (!_onePasswordBarButtonItem) {
+        _onePasswordBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"onepassword-toolbar"] style:UIBarButtonItemStylePlain target:self action:@selector(onePasswordTapped:)];
+    }
+    
+    return _onePasswordBarButtonItem;
+}
+
 - (UIBarButtonItem *)refreshBarButtonItem {
     if (!_refreshBarButtonItem) {
         _refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadTapped:)];
@@ -186,6 +196,8 @@
                           self.backBarButtonItem,
                           fixedSpace,
                           self.forwardBarButtonItem,
+                          flexibleSpace,
+                          self.onePasswordBarButtonItem,
                           nil];
         
         UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, toolbarWidth, 44.0f)];
@@ -201,6 +213,8 @@
                           self.backBarButtonItem,
                           flexibleSpace,
                           self.forwardBarButtonItem,
+                          flexibleSpace,
+                          self.onePasswordBarButtonItem,
                           flexibleSpace,
                           refreshStopBarButtonItem,
                           nil];
@@ -255,6 +269,14 @@
 }
 
 #pragma mark - Target actions
+
+- (void)onePasswordTapped:(UIBarButtonItem *)sender {
+    [[OnePasswordExtension sharedExtension] fillItemIntoWebView:self.webView forViewController:self sender:sender showOnlyLogins:NO completion:^(BOOL success, NSError *error) {
+        if (!success) {
+            NSLog(@"Failed to fill into webview: <%@>", error);
+        }
+    }];
+}
 
 - (void)goBackTapped:(UIBarButtonItem *)sender {
     [self.webView goBack];
